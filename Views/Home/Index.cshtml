@@ -4,35 +4,7 @@
 
 
 
-<h2>Newsy o filmach i serialach (RSS)</h2>
 
-<div class="rss-feed container my-4">
-    @if (ViewBag.NewsItems != null)
-    {
-        foreach (var item in ViewBag.NewsItems)
-        {
-            <div class="mb-3">
-                <h5><a href="@item.Link" target="_blank">@item.Title</a></h5>
-                <p>@item.PublishingDate?.ToString("dd.MM.yyyy")</p>
-            </div>
-        }
-    }
-    else
-    {
-        <p>Nie udało się załadować newsów.</p>
-    }
-</div>
-
-
-
-
-
-
-
-
-
-
-//<img src="~/images/pica.jpg" class="d-block w-100" alt="...">
 
 
 
@@ -105,59 +77,107 @@
     </button>
   </div>
 
-  <section id="zainteresowania" class="container my-5">
-    <h2>Zainteresowania</h2>
-    <div class="row">
-      <div class="col-md-3 zainteresowanie">
-        <h4>Seriale</h4>
-        <p>Uwielbiam oglądać seriale kryminalne i science-fiction.</p>
-      </div>
-      <div class="col-md-3 zainteresowanie">
-        <h4>Filmy</h4>
-        <p>Interesują mnie szczególnie filmy psychologiczne i thrillery.</p>
-      </div>
-      <div class="col-md-3 zainteresowanie">
-        <h4>Muzyka</h4>
-        <p>Lubię słuchać muzyki filmowej, disco i techno.</p>
-      </div>
-      <div class="col-md-3 zainteresowanie">
-        <h4>Jazda na rowerze</h4>
-        <p>Chętnie jeżdżę na rowerze po górskich szlakach i odkrywam nowe trasy.</p>
-      </div>
-    </div>
-  </section>
+    <section id="zainteresowania" class="container my-5">
+        <h2>Zainteresowania</h2>
+        <div class="row">
+            <div class="col-md-6 zainteresowanie">
+                <h4>Seriale</h4>
+                <p>Uwielbiam oglądać seriale kryminalne i science-fiction.</p>
+            </div>
+            <div class="col-md-6 zainteresowanie">
+                <h4>Filmy</h4>
+                <p>Interesują mnie szczególnie filmy psychologiczne i thrillery.</p>
+            </div>
+            <div class="col-md-6 zainteresowanie">
+                <h4>Muzyka</h4>
+                <p>Lubię słuchać muzyki filmowej, disco i techno.</p>
+            </div>
+            <div class="col-md-6 zainteresowanie">
+                <h4>Jazda na rowerze</h4>
+                <p>Chętnie jeżdżę na rowerze po górskich szlakach i odkrywam nowe trasy.</p>
+            </div>
+        </div>
+    </section>
 
+
+
+
+
+
+    <h2>Newsy o filmach i serialach (RSS)</h2>
+
+    <div class="rss-feed container my-4">
+        @if (ViewBag.NewsItems != null)
+        {
+            foreach (var item in ViewBag.NewsItems)
+            {
+                <div class="mb-3">
+                    <h5><a href="@item.Link" target="_blank">@item.Title</a></h5>
+                    <p>@item.PublishingDate?.ToString("dd.MM.yyyy")</p>
+                </div>
+            }
+        }
+        else
+        {
+            <p>Nie udało się załadować newsów.</p>
+        }
+    </div>
+
+
+
+
+    <section id="mapa" class="container my-5">
+        <h2>Mapa - ul. Willowa 2, Bielsko-Biała</h2>
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.363192506618!2d19.03973647670066!3d49.825936271484735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47169ecaa4b2fae9%3A0xd048362b9b6998d3!2sWillowa%202%2C%2043-309%20Bielsko-Bia%C5%82a!5e0!3m2!1spl!2spl!4v1711830771234!5m2!1spl!2spl" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+
+
+
+  //news bad
   <section id="newsy" class="container">
     <h2>Newsy o filmach i serialach (RSS) 2DJP</h2>
     <div class="rss-feed" id="rss-feed">Wczytywanie newsów...</div>
   </section>
 
-  <section id="mapa" class="container my-5">
-    <h2>Mapa - ul. Willowa 2, Bielsko-Biała</h2>
-    <div class="mapa">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.363192506618!2d19.03973647670066!3d49.825936271484735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47169ecaa4b2fae9%3A0xd048362b9b6998d3!2sWillowa%202%2C%2043-309%20Bielsko-Bia%C5%82a!5e0!3m2!1spl!2spl!4v1711830771234!5m2!1spl!2spl" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </section>
 
-  //<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  //<script>
-    // RSS Feed loader (example using a proxy API)
-   // async function loadRSS() {
-   //   const rssFeedElement = document.getElementById('rss-feed');
-   //   try {
-   //     const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.filmweb.pl/rss/news');
-   //     const data = await response.json();
-   //     rssFeedElement.innerHTML = '';
-   //     data.items.slice(0, 5).forEach(item => {
-   //       const el = document.createElement('div');
-   //       el.innerHTML = `<h5><a href="${item.link}" target="_blank">${item.title}</a></h5><p>${item.pubDate}</p>`;
-   //       rssFeedElement.appendChild(el);
-   //     });
-   //   } catch (err) {
-   //     rssFeedElement.innerHTML = 'Nie udało się wczytać kanału RSS.';
-   //   }
-   //  }
-   // loadRSS();
-  //</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+   RSS Feed loader (example using a proxy API)
+    async function loadRSS() {
+      const rssFeedElement = document.getElementById('rss-feed');
+      try {
+        const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.filmweb.pl/rss/news');
+        const data = await response.json();
+        rssFeedElement.innerHTML = '';
+        data.items.slice(0, 5).forEach(item => {
+          const el = document.createElement('div');
+          el.innerHTML = `<h5><a href="${item.link}" target="_blank">${item.title}</a></h5><p>${item.pubDate}</p>`;
+          rssFeedElement.appendChild(el);
+      });
+      } catch (err) {
+        rssFeedElement.innerHTML = 'Nie udało się wczytać kanału RSS.';
+      }
+     }
+    loadRSS();
+  </script>
+
+
+
+
+
+    
+    <img src="~/images/pica.jpg" class="d-block w-100" alt="...">
+
+
+
+
+
+
+
 </body>
 </html>

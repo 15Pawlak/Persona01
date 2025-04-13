@@ -31,3 +31,4 @@ D:\Net\Persona01\Persona01\obj\Debug\net8.0\ref\Persona01.dll
 D:\Net\Persona01\Persona01\bin\Debug\net8.0\CodeHollow.FeedReader.dll
 D:\Net\Persona01\Persona01\obj\Debug\net8.0\Persona01.csproj.AssemblyReference.cache
 D:\Net\Persona01\Persona01\obj\Debug\net8.0\Persona01.csproj.Up2Date
+D:\Net\Persona01\Persona01\obj\Debug\net8.0\Persona01.sourcelink.json
